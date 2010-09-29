@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Bindings-CPP" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\Bindings-CPP" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\Bindings-CPP" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="..\..\include" />
+		</Compiler>
+		<Linker>
+			<Add library="SIEGE" />
+			<Add directory="..\..\build" />
+		</Linker>
+		<Unit filename="cppsiege\audio\buffer.cpp" />
+		<Unit filename="cppsiege\audio\buffer.hh" />
+		<Unit filename="cppsiege\audio\source.cpp" />
+		<Unit filename="cppsiege\audio\source.hh" />
+		<Unit filename="cppsiege\common.cpp" />
+		<Unit filename="cppsiege\common.hh" />
+		<Unit filename="cppsiege\core\core.cpp" />
+		<Unit filename="cppsiege\core\core.hh" />
+		<Unit filename="cppsiege\core\window.cpp" />
+		<Unit filename="cppsiege\core\window.hh" />
+		<Unit filename="cppsiege\graphics\draw.cpp" />
+		<Unit filename="cppsiege\graphics\draw.hh" />
+		<Unit filename="cppsiege\graphics\turtle.cpp" />
+		<Unit filename="cppsiege\graphics\turtle.hh" />
+		<Unit filename="cppsiege\graphics\viewport.cpp" />
+		<Unit filename="cppsiege\graphics\viewport.hh" />
+		<Unit filename="cppsiege\input\keyboard.cpp" />
+		<Unit filename="cppsiege\input\keyboard.hh" />
+		<Unit filename="cppsiege\input\mouse.cpp" />
+		<Unit filename="cppsiege\input\mouse.hh" />
+		<Unit filename="cppsiege\siege.cpp" />
+		<Unit filename="cppsiege\siege.hh" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
