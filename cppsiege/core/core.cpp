@@ -14,14 +14,23 @@
 
 #include "core.hh"
 
+using namespace std;
 using namespace siege::c;
 namespace siege
 {
     namespace core
     {
-        SGuint loadModules(char** modules)
+        SGuint loadModulesv(int n, va_list args)
         {
-            return sgLoadModules(modules);
+            return sgLoadModulesv(n, args);
+        }
+        SGuint loadModules(int n, ...)
+        {
+            va_list args;
+            va_start(args, n);
+            SGuint ret = sgLoadModulesv(n, args);
+            va_end(args);
+            return ret;
         }
         SGbool loadModule(char* module)
         {

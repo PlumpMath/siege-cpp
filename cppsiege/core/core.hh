@@ -16,13 +16,14 @@
 #define __CPP_SIEGE_CORE_H__
 
 #include "../common.hh"
+#include <cstdarg>
 
 namespace siege
 {
     namespace core
     {
-        /// \todo overload for strings and vectors
-        siege::c::SGuint loadModules(char** modules);
+        siege::c::SGuint loadModules(int n, std::va_list args);
+        siege::c::SGuint loadModules(int n, ...);
         siege::c::SGbool loadModule(char* module);
         siege::c::SGbool init(siege::c::SGuint width, siege::c::SGuint height, siege::c::SGuint bpp, siege::c::SGuint flags);
         siege::c::SGbool deinit();
