@@ -24,7 +24,8 @@ namespace siege
     {
         siege::c::SGuint loadModules(int n, std::va_list args);
         siege::c::SGuint loadModules(int n, ...);
-        siege::c::SGbool loadModule(char* module);
+        /// \todo Overload for string
+        siege::c::SGbool loadModule(const char* module);
         siege::c::SGbool init(siege::c::SGuint width, siege::c::SGuint height, siege::c::SGuint bpp, siege::c::SGuint flags);
         siege::c::SGbool deinit();
 

@@ -32,7 +32,7 @@ namespace siege
             va_end(args);
             return ret;
         }
-        SGbool loadModule(char* module)
+        SGbool loadModule(const char* module)
         {
             return sgLoadModule(module);
         }
