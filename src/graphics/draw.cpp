@@ -12,9 +12,10 @@
  * Tim Chas <darkuranium@gmail.com>.
  */
 
-#include "draw.hh"
+#include <graphics/draw.hh>
 
 using namespace siege::c;
+
 namespace siege
 {
 	namespace graphics

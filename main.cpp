@@ -1,4 +1,4 @@
-#include "cppsiege/siege.hh"
+#include <siege.hh>
 
 #include <cmath>
 

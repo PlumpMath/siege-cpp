@@ -12,7 +12,7 @@
  * Tim Chas <darkuranium@gmail.com>.
  */
 
-#include "buffer.hh"
+#include <audio/buffer.hh>
 
 using namespace siege::c;
 

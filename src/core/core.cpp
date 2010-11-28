@@ -12,7 +12,7 @@
  * Tim Chas <darkuranium@gmail.com>.
  */
 
-#include "core.hh"
+#include <core/core.hh>
 
 using namespace std;
 using namespace siege::c;

@@ -27,17 +27,9 @@ namespace siege
             friend class Buffer;
         private:
             siege::c::SGAudioSource* handle;
-            void create(class Buffer* buffer, float priority, float volume, float pitch, bool looping);
+            void create(float priority, float volume, float pitch, bool looping);
 
         public:
-            Source(class Buffer* buffer, float priority, float volume, float pitch, bool looping);
-            Source(class Buffer* buffer, float priority, float volume, float pitch);
-            Source(class Buffer* buffer, float priority, float volume, bool looping);
-            Source(class Buffer* buffer, float priority, float volume);
-            Source(class Buffer* buffer, float priority, bool looping);
-            Source(class Buffer* buffer, float priority);
-            Source(class Buffer* buffer, bool looping);
-            Source(class Buffer* buffer);
             Source(float priority, float volume, float pitch, bool looping);
             Source(float priority, float volume, float pitch);
             Source(float priority, float volume, bool looping);

@@ -12,9 +12,10 @@
  * Tim Chas <darkuranium@gmail.com>.
  */
 
-#include "keyboard.hh"
+#include <input/keyboard.hh>
 
 using namespace siege::c;
+
 namespace siege
 {
 	namespace input

@@ -12,9 +12,10 @@
  * Tim Chas <darkuranium@gmail.com>.
  */
 
-#include "viewport.hh"
+#include <graphics/viewport.hh>
 
 using namespace siege::c;
+
 namespace siege
 {
 	namespace graphics

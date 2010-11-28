@@ -12,9 +12,10 @@
  * Tim Chas <darkuranium@gmail.com>.
  */
 
-#include "mouse.hh"
+#include <input/mouse.hh>
 
 using namespace siege::c;
+
 namespace siege
 {
 	namespace input

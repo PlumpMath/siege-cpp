@@ -12,7 +12,7 @@
  * Tim Chas <darkuranium@gmail.com>.
  */
 
-#include "window.hh"
+#include <core/window.hh>
 
 using namespace siege::c;
 
