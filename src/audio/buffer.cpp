@@ -22,7 +22,7 @@ namespace siege
 	{
 		void Buffer::create(const char* fname)
 		{
-			handle = sgAudioBufferCreate(fname);
+                        handle = sgAudioBufferCreateFile(fname);
 		}
 
 		Buffer::Buffer(const char* fname)
