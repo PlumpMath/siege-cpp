@@ -28,9 +28,9 @@ namespace siege
 			bool isOpened();
 			void close();
 
-			void setTitleF(char* format, ...);
-			void setTitleFV(char* format, va_list args);
-			void setTitle(char* title);
+			void setTitlef(const char* format, ...);
+			void setTitlefv(const char* format, va_list args);
+			void setTitle(const char* title);
 			char* getTitle();
 
 			void setSize(siege::c::SGuint width, siege::c::SGuint height);

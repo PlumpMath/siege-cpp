@@ -35,28 +35,69 @@ namespace siege
                 Font* resizeCopy(float height);
                 Font* resize(float height);
 
-                void print(float x, float y, const char* format, ...);
-                void printV(float x, float y, const char* format, va_list args);
-                void printT(float x, float y, const char* text);
+                void printf(float x, float y, const char* format, ...);
+                void printfv(float x, float y, const char* format, va_list args);
+                void printfW(float x, float y, const wchar_t* format, ...);
+                void printfvW(float x, float y, const wchar_t* format, va_list args);
 
-                void printCentered(float x, float y, const char* format, ...);
-                void printCenteredV(float x, float y, const char* format, va_list args);
-                void printCenteredT(float x, float y, const char* text);
+                void printU32(float x, float y, const siege::c::SGdchar* text);
+                void printU16(float x, float y, const siege::c::SGwchar* text);
+                void printU8(float x, float y, const siege::c::SGchar* text);
+                void printW(float x, float y, const wchar_t* text);
+                void print(float x, float y, const char* text);
 
-                void printXCentered(float x, float y, const char* format, ...);
-                void printXCenteredV(float x, float y, const char* format, va_list args);
-                void printXCenteredT(float x, float y, const char* text);
+                void printCenteredf(float x, float y, const char* format, ...);
+                void printCenteredfv(float x, float y, const char* format, va_list args);
+                void printCenteredfW(float x, float y, const wchar_t* format, ...);
+                void printCenteredfvW(float x, float y, const wchar_t* format, va_list args);
 
-                void printYCentered(float x, float y, const char* format, ...);
-                void printYCenteredV(float x, float y, const char* format, va_list args);
-                void printYCenteredT(float x, float y, const char* text);
+                void printCenteredU32(float x, float y, const siege::c::SGdchar* text);
+                void printCenteredU16(float x, float y, const siege::c::SGwchar* text);
+                void printCenteredU8(float x, float y, const siege::c::SGchar* text);
+                void printCenteredW(float x, float y, const wchar_t* text);
+                void printCentered(float x, float y, const char* text);
 
-                void strSize(float* x, float* y, const char* format, ...);
-                void strSize(float& x, float& y, const char* format, ...);
-                void strSizeV(float* x, float* y, const char* format, va_list args);
-                void strSizeV(float& x, float& y, const char* format, va_list args);
-                void strSizeT(float* x, float* y, const char* text);
-                void strSizeT(float& x, float& y, const char* text);
+                void printXCenteredf(float x, float y, const char* format, ...);
+                void printXCenteredfv(float x, float y, const char* format, va_list args);
+                void printXCenteredfW(float x, float y, const wchar_t* format, ...);
+                void printXCenteredfvW(float x, float y, const wchar_t* format, va_list args);
+
+                void printXCenteredU32(float x, float y, const siege::c::SGdchar* text);
+                void printXCenteredU16(float x, float y, const siege::c::SGwchar* text);
+                void printXCenteredU8(float x, float y, const siege::c::SGchar* text);
+                void printXCenteredW(float x, float y, const wchar_t* text);
+                void printXCentered(float x, float y, const char* text);
+
+                void printYCenteredf(float x, float y, const char* format, ...);
+                void printYCenteredfv(float x, float y, const char* format, va_list args);
+                void printYCenteredfW(float x, float y, const wchar_t* format, ...);
+                void printYCenteredfvW(float x, float y, const wchar_t* format, va_list args);
+
+                void printYCenteredU32(float x, float y, const siege::c::SGdchar* text);
+                void printYCenteredU16(float x, float y, const siege::c::SGwchar* text);
+                void printYCenteredU8(float x, float y, const siege::c::SGchar* text);
+                void printYCenteredW(float x, float y, const wchar_t* text);
+                void printYCentered(float x, float y, const char* text);
+
+                void strSizef(float* x, float* y, const char* format, ...);
+                void strSizef(float& x, float& y, const char* format, ...);
+                void strSizefv(float* x, float* y, const char* format, va_list args);
+                void strSizefv(float& x, float& y, const char* format, va_list args);
+                void strSizefW(float* x, float* y, const wchar_t* format, ...);
+                void strSizefW(float& x, float& y, const wchar_t* format, ...);
+                void strSizefvW(float* x, float* y, const wchar_t* format, va_list args);
+                void strSizefvW(float& x, float& y, const wchar_t* format, va_list args);
+
+				void strSizeU32(float* x, float* y, const siege::c::SGdchar* text);
+				void strSizeU32(float& x, float& y, const siege::c::SGdchar* text);
+                void strSizeU16(float* x, float* y, const siege::c::SGwchar* text);
+                void strSizeU16(float& x, float& y, const siege::c::SGwchar* text);
+                void strSizeU8(float* x, float* y, const siege::c::SGchar* text);
+                void strSizeU8(float& x, float& y, const siege::c::SGchar* text);
+                void strSizeW(float* x, float* y, const wchar_t* text);
+                void strSizeW(float& x, float& y, const wchar_t* text);
+                void strSize(float* x, float* y, const char* text);
+                void strSize(float& x, float& y, const char* text);
         } ;
     }
 }

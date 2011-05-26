@@ -35,18 +35,18 @@ namespace siege
 				sgWindowClose();
 			}
 
-			void setTitleF(char* format, ...)
+			void setTitlef(const char* format, ...)
 			{
 				va_list args;
 				va_start(args, format);
-				sgWindowSetTitleFV(format, args);
+				sgWindowSetTitlefv(format, args);
 				va_end(args);
 			}
-			void setTitleFV(char* format, va_list args)
+			void setTitlefv(const char* format, va_list args)
 			{
-				sgWindowSetTitleFV(format, args);
+				sgWindowSetTitlefv(format, args);
 			}
-			void setTitle(char* title)
+			void setTitle(const char* title)
 			{
 				sgWindowSetTitle(title);
 			}
