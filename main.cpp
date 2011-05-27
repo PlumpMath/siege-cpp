@@ -8,12 +8,6 @@ using namespace type;
 using namespace graphics;
 using namespace input;
 
-namespace foo
-{
-	typedef void Fvoid;
-}
-using foo::Fvoid;
-
 int main()
 {
     core::loadModule("SDL");
