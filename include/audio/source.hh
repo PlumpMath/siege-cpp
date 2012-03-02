@@ -5,7 +5,7 @@
  * This file is part of libSIEGE.
  *
  * This software is copyrighted work licensed under the terms of the
- * 2-clause BSD license. Please consult the file "license.txt" for
+ * 2-clause BSD license. Please consult the file "COPYING.txt" for
  * details.
  *
  * If you did not recieve the file with this program, please email
@@ -16,6 +16,7 @@
 #define __CPP_SIEGE_AUDIO_SOURCE_H__
 
 #include "../common.hh"
+#include "buffer.hh"
 
 namespace siege
 {
@@ -24,67 +25,71 @@ namespace siege
         /// \todo overload
         class Source
         {
-            friend class Buffer;
         private:
-            siege::c::SGAudioSource* handle;
-            void create(float priority, float volume, float pitch, bool looping);
+            c::SGAudioSource* handle;
+            void create(float priority, float volume, float pitch, bool looping)
+            {
+                handle = c::sgAudioSourceCreate(priority, volume, pitch, looping);
+            }
 
         public:
-            Source(float priority, float volume, float pitch, bool looping);
-            Source(float priority, float volume, float pitch);
-            Source(float priority, float volume, bool looping);
-            Source(float priority, float volume);
-            Source(float priority, bool looping);
-            Source(float priority);
-            Source(bool looping);
-            Source();
-            ~Source();
+            Source(float priority, float volume, float pitch, bool looping = false) { create(priority, volume, pitch, looping); }
+            Source(float priority, float volume, bool looping = false) { create(priority, volume, 1.0, looping); }
+            Source(float priority, bool looping = false) { create(priority, 1.0, 1.0, looping); }
+            Source(bool looping = false) { create(0.0, 1.0, 1.0, looping); }
+            ~Source() { c::sgAudioSourceDestroy(handle); }
 
-            void play();
-			bool isPlaying();
+            void play() { c::sgAudioSourcePlay(handle); }
+            bool isPlaying() { return c::sgAudioSourceIsPlaying(handle); }
 
-			void pause();
-			bool isPaused();
+            void pause() { c::sgAudioSourcePause(handle); }
+            bool isPaused() { return c::sgAudioSourceIsPaused(handle); }
 
-			void rewind();
-			bool isRewinded();
+            void stop() { c::sgAudioSourceStop(handle); }
+            bool isStopped() { return c::sgAudioSourceIsStopped(handle); }
 
-			void stop();
-			bool isStopped();
+            bool isActive() { return c::sgAudioSourceIsActive(handle); }
 
-            bool isActive();
+            void queueBuffers(class Buffer** buffers, size_t numbuffers)
+            {
+                size_t i;
+                c::SGAudioBuffer** cbufs = new c::SGAudioBuffer*[numbuffers];
+                for(i = 0; i < numbuffers; i++)
+                    cbufs[i] = buffers[i]->handle;
+                c::sgAudioSourceQueueBuffers(handle, cbufs, numbuffers);
+                delete[] cbufs;
+            }
+            void queueBuffer(class Buffer* buffer) { c::sgAudioSourceQueueBuffer(handle, buffer->handle); }
 
-			void queueBuffers(class Buffer** buffers, siege::c::SGuint numbuffers);
-			void queueBuffer(class Buffer* buffer);
+            void setPosition(float x, float y, float z) { c::sgAudioSourceSetPosition3f(handle, x, y, z); }
+            void setPosition(float x, float y) { c::sgAudioSourceSetPosition2f(handle, x, y); }
 
-			void setPosition(float x, float y, float z);
-			void setPosition(float x, float y);
+            void getPosition(float* x, float* y, float* z) { c::sgAudioSourceGetPosition3f(handle, x, y, z); }
+            void getPosition(float& x, float& y, float& z) { c::sgAudioSourceGetPosition3f(handle, &x, &y, &z); }
 
-			void getPosition(float* x, float* y, float* z);
-			void getPosition(float& x, float& y, float& z);
-			void getPosition(float* x, float* y);
-			void getPosition(float& x, float& y);
+            void getPosition(float* x, float* y) { c::sgAudioSourceGetPosition2f(handle, x, y); }
+            void getPosition(float& x, float& y) { c::sgAudioSourceGetPosition2f(handle, &x, &y); }
 
-			void setVelocity(float x, float y, float z);
-			void setVelocity(float x, float y);
+            void setVelocity(float x, float y, float z) { c::sgAudioSourceSetVelocity3f(handle, x, y, z); }
+            void setVelocity(float x, float y) { c::sgAudioSourceSetVelocity2f(handle, x, y); }
 
-			void getVelocity(float* x, float* y, float* z);
-			void getVelocity(float& x, float& y, float& z);
-			void getVelocity(float* x, float* y);
-			void getVelocity(float& x, float& y);
+            void getVelocity(float* x, float* y, float* z) { c::sgAudioSourceGetVelocity3f(handle, x, y, z); }
+            void getVelocity(float& x, float& y, float& z) { c::sgAudioSourceGetVelocity3f(handle, &x, &y, &z); }
+            void getVelocity(float* x, float* y) { c::sgAudioSourceGetVelocity2f(handle, x, y); }
+            void getVelocity(float& x, float& y) { c::sgAudioSourceGetVelocity2f(handle, &x, &y); }
 
-			//void setFalloff(float falloff);
-			//float getFalloff();
+            /*void setFalloff(float falloff) { c::sgAudioSourceSetFalloff(handle, falloff); }
+            float getFalloff() { return c::sgAudioSourceGetFalloff(handle); }*/
 
-			void setPitch(float pitch);
-			float getPitch();
+            void setPitch(float pitch) { c::sgAudioSourceSetPitch(handle, pitch); }
+            float getPitch() { return c::sgAudioSourceGetPitch(handle); }
 
-			void setVolume(float volume);
-			float getVolume();
+            void setVolume(float volume) { c::sgAudioSourceSetVolume(handle, volume); }
+            float getVolume() { return c::sgAudioSourceGetVolume(handle); }
 
-			void setLooping(bool looping);
-			bool getLooping();
-		} ;
+            void setLooping(bool looping) { c::sgAudioSourceSetLooping(handle, looping); }
+            bool getLooping() { return c::sgAudioSourceGetLooping(handle); }
+        } ;
     }
 }
 

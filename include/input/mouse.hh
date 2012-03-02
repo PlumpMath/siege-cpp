@@ -5,7 +5,7 @@
  * This file is part of libSIEGE.
  *
  * This software is copyrighted work licensed under the terms of the
- * 2-clause BSD license. Please consult the file "license.txt" for
+ * 2-clause BSD license. Please consult the file "COPYING.txt" for
  * details.
  *
  * If you did not recieve the file with this program, please email
@@ -19,44 +19,44 @@
 
 namespace siege
 {
-	namespace input
-	{
-		namespace mouse
-		{
-			void getPosPrev(siege::c::SGint* x, siege::c::SGint* y);
-			void getPosPrev(siege::c::SGint& x, siege::c::SGint& y);
-			siege::c::SGint getPosPrevX();
-			siege::c::SGint getPosPrevY();
+    namespace input
+    {
+        namespace mouse
+        {
+            inline void getPosPrev(c::SGint* x, c::SGint* y) { c::sgMouseGetPosPrev(x, y); }
+            inline void getPosPrev(c::SGint& x, c::SGint& y) { c::sgMouseGetPosPrev(&x, &y); }
+            inline c::SGint getPosPrevX() { return c::sgMouseGetPosPrevX(); }
+            inline c::SGint getPosPrevY() { return c::sgMouseGetPosPrevY(); }
 
-			void getPos(siege::c::SGint* x, siege::c::SGint* y);
-			void getPos(siege::c::SGint& x, siege::c::SGint& y);
-			siege::c::SGint getPosX();
-			siege::c::SGint getPosY();
+            inline void getPos(c::SGint* x, c::SGint* y) { c::sgMouseGetPos(x, y); }
+            inline void getPos(c::SGint& x, c::SGint& y) { c::sgMouseGetPos(&x, &y); }
+            inline c::SGint getPosX() { return c::sgMouseGetPosX(); }
+            inline c::SGint getPosY() { return c::sgMouseGetPosY(); }
 
-			siege::c::SGint getWheelPrev();
-			siege::c::SGint getWheel();
+            inline c::SGint getWheelPrev() { return c::sgMouseGetWheelPrev(); }
+            inline c::SGint getWheel() { return c::sgMouseGetWheel(); }
 
-			bool getButtonPrev(siege::c::SGuint button);
-			bool getButton(siege::c::SGuint button);
-			bool getButtonPress(siege::c::SGuint button);
-			bool getButtonRelease(siege::c::SGuint button);
+            inline bool getButtonPrev(c::SGuint button) { return c::sgMouseGetButtonPrev(button); }
+            inline bool getButton(c::SGuint button) { return c::sgMouseGetButton(button); }
+            inline bool getButtonPress(c::SGuint button) { return c::sgMouseGetButtonPress(button); }
+            inline bool getButtonRelease(c::SGuint button) { return c::sgMouseGetButtonRelease(button); }
 
-			bool getButtonLeftPrev();
-			bool getButtonLeft();
-			bool getButtonLeftPress();
-			bool getButtonLeftRelease();
+            inline bool getButtonLeftPrev() { return c::sgMouseGetButtonLeftPrev(); }
+            inline bool getButtonLeft() { return c::sgMouseGetButtonLeft(); }
+            inline bool getButtonLeftPress() { return c::sgMouseGetButtonLeftPress(); }
+            inline bool getButtonLeftRelease() { return c::sgMouseGetButtonLeftRelease(); }
 
-			bool getButtonRightPrev();
-			bool getButtonRight();
-			bool getButtonRightPress();
-			bool getButtonRightRelease();
+            inline bool getButtonRightPrev() { return c::sgMouseGetButtonRightPrev(); }
+            inline bool getButtonRight() { return c::sgMouseGetButtonRight(); }
+            inline bool getButtonRightPress() { return c::sgMouseGetButtonRightPress(); }
+            inline bool getButtonRightRelease() { return c::sgMouseGetButtonRightRelease(); }
 
-			bool getButtonMiddlePrev();
-			bool getButtonMiddle();
-			bool getButtonMiddlePress();
-			bool getButtonMiddleRelease();
-		}
-	}
+            inline bool getButtonMiddlePrev() { return c::sgMouseGetButtonMiddlePrev(); }
+            inline bool getButtonMiddle() { return c::sgMouseGetButtonMiddle(); }
+            inline bool getButtonMiddlePress() { return c::sgMouseGetButtonMiddlePress(); }
+            inline bool getButtonMiddleRelease() { return c::sgMouseGetButtonMiddleRelease(); }
+        }
+    }
 }
 
 #endif // __CPP_SIEGE_INPUT_MOUSE_H__

@@ -1,6 +1,6 @@
-#include <cmath>
-
 #include <siege.hh>
+
+#include <cmath>
 
 using namespace siege;
 using namespace core;
@@ -13,7 +13,8 @@ int main()
     core::loadModule("SDL");
     core::loadModule("OpenGL");
 
-    core::init(640, 480, 32, 0);
+    core::init(0);
+    window::open(640, 480, 32, 0);
 
     while(core::loop())
     {

@@ -5,7 +5,7 @@
  * This file is part of libSIEGE.
  *
  * This software is copyrighted work licensed under the terms of the
- * 2-clause BSD license. Please consult the file "license.txt" for
+ * 2-clause BSD license. Please consult the file "COPYING.txt" for
  * details.
  *
  * If you did not recieve the file with this program, please email
@@ -19,18 +19,19 @@
 
 namespace siege
 {
-	namespace input
-	{
-		namespace keyboard
-		{
-			bool key(siege::c::SGenum key);
-			bool keyPress(siege::c::SGenum key);
-			bool keyRelease(siege::c::SGenum key);
-			bool chr(siege::c::SGdchar chr);
-			bool chrPress(siege::c::SGdchar chr);
-			bool chrRelease(siege::c::SGdchar chr);
-		}
-	}
+    namespace input
+    {
+        namespace keyboard
+        {
+            inline bool key(c::SGenum key) { return c::sgKeyboardKey(key); }
+            inline bool keyPress(c::SGenum key) { return c::sgKeyboardKeyPress(key); }
+            inline bool keyRelease(c::SGenum key) { return c::sgKeyboardKeyRelease(key); }
+
+            inline bool chr(c::SGdchar chr) { return c::sgKeyboardChar(chr); }
+            inline bool chrPress(c::SGdchar chr) { return c::sgKeyboardCharPress(chr); }
+            inline bool chrRelease(c::SGdchar chr) { return c::sgKeyboardCharRelease(chr); }
+        }
+    }
 }
 
 #endif // __CPP_SIEGE_INPUT_KEYBOARD_H__

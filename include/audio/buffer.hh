@@ -5,7 +5,7 @@
  * This file is part of libSIEGE.
  *
  * This software is copyrighted work licensed under the terms of the
- * 2-clause BSD license. Please consult the file "license.txt" for
+ * 2-clause BSD license. Please consult the file "COPYING.txt" for
  * details.
  *
  * If you did not recieve the file with this program, please email
@@ -19,24 +19,35 @@
 
 namespace siege
 {
-	namespace audio
-	{
-		/// \todo overload
-		class Buffer
-		{
-			friend class Source;
-		private:
-			siege::c::SGAudioBuffer* handle;
-			void create(const char* fname);
+    namespace audio
+    {
+        /// \todo overload
+        class Buffer
+        {
+            friend class Source;
+        private:
+            c::SGAudioBuffer* handle;
+            void create(const char* fname)
+            {
+                handle = c::sgAudioBufferCreateFile(fname);
+            }
 
-		public:
-			Buffer(const char* fname);
-			Buffer(char* fname);
-			~Buffer();
+        public:
+            Buffer(const char* fname)
+            {
+                create(fname);
+            }
+            ~Buffer()
+            {
+                c::sgAudioBufferDestroy(handle);
+            }
 
-			void setData(siege::c::SGuint channels, siege::c::SGuint format, siege::c::SGuint frequency, void* data, siege::c::SGuint datalen);
-		} ;
-	}
+            void setData(c::SGuint channels, c::SGenum format, c::SGenum frequency, void* data, std::size_t datalen)
+            {
+                c::sgAudioBufferSetData(handle, channels, format, frequency, data, datalen);
+            }
+        } ;
+    }
 }
 
 #endif // __CPP_SIEGE_AUDIO_BUFFER_H__

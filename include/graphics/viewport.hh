@@ -19,28 +19,27 @@
 
 namespace siege
 {
-	namespace graphics
-	{
-		/// \todo overload
-		class Viewport
-		{
-		private:
-			siege::c::SGViewport* handle;
-			void create(siege::c::SGuint wposx, siege::c::SGuint wposy, siege::c::SGuint wsizex, siege::c::SGuint wsizey, float posx, float posy, float sizex, float sizey);
-			void create(siege::c::SGuint wposx, siege::c::SGuint wposy, siege::c::SGuint wsizex, siege::c::SGuint wsizey);
-			void create();
+    namespace graphics
+    {
+        class Viewport
+        {
+        private:
+            c::SGViewport* handle;
+            void create(c::SGuint wposx, c::SGuint wposy, c::SGuint wsizex, c::SGuint wsizey, float posx, float posy, float sizex, float sizey) { handle = c::sgViewportCreate4i4f(wposx, wposy, wsizex, wsizey, posx, posy, sizex, sizey); }
+            void create(c::SGuint wposx, c::SGuint wposy, c::SGuint wsizex, c::SGuint wsizey) { handle = c::sgViewportCreate4i(wposx, wposy, wsizex, wsizey); }
+            void create() { handle = c::sgViewportCreate(); }
 
-		public:
-			Viewport(siege::c::SGuint wposx, siege::c::SGuint wposy, siege::c::SGuint wsizex, siege::c::SGuint wsizey, float posx, float posy, float sizex, float sizey);
-			Viewport(siege::c::SGuint wposx, siege::c::SGuint wposy, siege::c::SGuint wsizex, siege::c::SGuint wsizey);
-			Viewport();
-			~Viewport();
+        public:
+            Viewport(c::SGuint wposx, c::SGuint wposy, c::SGuint wsizex, c::SGuint wsizey, float posx, float posy, float sizex, float sizey) { create(wposx, wposy, wsizex, wsizey, posx, posy, sizex, sizey); }
+            Viewport(c::SGuint wposx, c::SGuint wposy, c::SGuint wsizex, c::SGuint wsizey) { create(wposx, wposy, wsizex, wsizey); }
+            Viewport() { create(); }
+            ~Viewport() { c::sgViewportDestroy(handle); }
 
-			void set(siege::c::SGuint wposx, siege::c::SGuint wposy, siege::c::SGuint wsizex, siege::c::SGuint wsizey, float posx, float posy, float sizex, float sizey);
-			void set(siege::c::SGuint wposx, siege::c::SGuint wposy, siege::c::SGuint wsizex, siege::c::SGuint wsizey);
-			void reset();
-		} ;
-	}
+            void set(c::SGuint wposx, c::SGuint wposy, c::SGuint wsizex, c::SGuint wsizey, float posx, float posy, float sizex, float sizey) { c::sgViewportSet4i4f(handle, wposx, wposy, wsizex, wsizey, posx, posy, sizex, sizey); }
+            void set(c::SGuint wposx, c::SGuint wposy, c::SGuint wsizex, c::SGuint wsizey) { c::sgViewportSet4i(handle, wposx, wposy, wsizex, wsizey); }
+            void reset() { c::sgViewportReset(handle); }
+        } ;
+    }
 }
 
 #endif // __CPP_SIEGE_GRAPHICS_VIEWPORT_H__

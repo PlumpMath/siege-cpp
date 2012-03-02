@@ -29,25 +29,24 @@ namespace siege
 {
 	namespace type
 	{
-		using siege::c::SGvoid;
-		using siege::c::SGbool;
-		using siege::c::SGenum;
+		using c::SGbool;
+		using c::SGenum;
 
-		using siege::c::SGchar;
-		using siege::c::SGwchar;
-		using siege::c::SGdchar;
+		using c::SGchar;
+		using c::SGwchar;
+		using c::SGdchar;
 
-		using siege::c::SGbyte;
-		using siege::c::SGubyte;
-		using siege::c::SGshort;
-		using siege::c::SGushort;
-		using siege::c::SGint;
-		using siege::c::SGuint;
-		using siege::c::SGlong;
-		using siege::c::SGulong;
+		using c::SGbyte;
+		using c::SGubyte;
+		using c::SGshort;
+		using c::SGushort;
+		using c::SGint;
+		using c::SGuint;
+		using c::SGlong;
+		using c::SGulong;
 
-		using siege::c::SGfloat;
-		using siege::c::SGdouble;
+		using c::SGfloat;
+		using c::SGdouble;
 	}
 }
 

@@ -15,6 +15,7 @@
 #ifndef __CPP_SIEGE_COMMON_H__
 #define __CPP_SIEGE_COMMON_H__
 
+#include <cstddef>
 #include <cstdarg>
 
 namespace siege

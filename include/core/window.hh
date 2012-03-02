@@ -5,7 +5,7 @@
  * This file is part of libSIEGE.
  *
  * This software is copyrighted work licensed under the terms of the
- * 2-clause BSD license. Please consult the file "license.txt" for
+ * 2-clause BSD license. Please consult the file "COPYING.txt" for
  * details.
  *
  * If you did not recieve the file with this program, please email
@@ -19,32 +19,37 @@
 
 namespace siege
 {
-	namespace core
-	{
-		namespace window
-		{
-			/// \todo overload
-			bool open(siege::c::SGuint width, siege::c::SGuint height, siege::c::SGuint bpp, siege::c::SGenum flags);
-			bool isOpened();
-			void close();
+    namespace core
+    {
+        namespace window
+        {
+            inline bool open(c::SGuint width, c::SGuint height, c::SGuint bpp, c::SGenum flags) { return c::sgWindowOpen(width, height, bpp, flags); }
+            inline bool isOpened() { return c::sgWindowIsOpened(); }
+            inline void close() { c::sgWindowClose(); }
 
-			void setTitlef(const char* format, ...);
-			void setTitlefv(const char* format, va_list args);
-			void setTitle(const char* title);
-			char* getTitle();
+            inline void setTitlef(const char* format, ...)
+            {
+                std::va_list args;
+                va_start(args, format);
+                c::sgWindowSetTitlefv(format, args);
+                va_end(args);
+            }
+            inline void setTitlefv(const char* format, std::va_list args) { c::sgWindowSetTitlefv(format, args); }
+            inline void setTitle(const char* title) { c::sgWindowSetTitle(title); }
+            inline char* getTitle() { return c::sgWindowGetTitle(); }
 
-			void setSize(siege::c::SGuint width, siege::c::SGuint height);
-			void getSize(siege::c::SGuint* width, siege::c::SGuint* height);
-			void getSize(siege::c::SGuint& width, siege::c::SGuint& height);
+            inline void setSize(c::SGuint width, c::SGuint height) { c::sgWindowSetSize(width, height); }
+            inline void getSize(c::SGuint* width, c::SGuint* height) { c::sgWindowGetSize(width, height); }
+            inline void getSize(c::SGuint& width, c::SGuint& height) { c::sgWindowGetSize(&width, &height); }
 
-			void setWidth(siege::c::SGuint width);
-			siege::c::SGuint getWidth();
-			void setHeight(siege::c::SGuint height);
-			siege::c::SGuint getHeight();
+            inline void setWidth(c::SGuint width) { c::sgWindowSetWidth(width); }
+            inline c::SGuint getWidth() { return c::sgWindowGetWidth(); }
+            inline void setHeight(c::SGuint height) { c::sgWindowSetHeight(height); }
+            inline c::SGuint getHeight() { return c::sgWindowGetHeight(); }
 
-			void swapBuffers();
-		}
-	}
+            inline void swapBuffers() { c::sgWindowSwapBuffers();}
+        }
+    }
 }
 
 
