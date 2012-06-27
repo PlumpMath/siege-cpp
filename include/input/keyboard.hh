@@ -26,10 +26,6 @@ namespace siege
             inline bool key(c::SGenum key) { return c::sgKeyboardKey(key); }
             inline bool keyPress(c::SGenum key) { return c::sgKeyboardKeyPress(key); }
             inline bool keyRelease(c::SGenum key) { return c::sgKeyboardKeyRelease(key); }
-
-            inline bool chr(c::SGdchar chr) { return c::sgKeyboardChar(chr); }
-            inline bool chrPress(c::SGdchar chr) { return c::sgKeyboardCharPress(chr); }
-            inline bool chrRelease(c::SGdchar chr) { return c::sgKeyboardCharRelease(chr); }
         }
     }
 }
