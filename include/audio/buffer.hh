@@ -47,6 +47,7 @@ namespace siege
                 c::sgAudioBufferSetData(handle, channels, format, frequency, data, datalen);
             }
         } ;
+        RTYPE(Buffer);
     }
 }
 

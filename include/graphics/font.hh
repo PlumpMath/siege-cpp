@@ -21,25 +21,23 @@ namespace siege
 {
     namespace graphics
     {
-        class Font
+        class Font: public SGClass<c::SGFont>
         {
             private:
-                c::SGFont* handle;
                 void create(const char* fname, float height, c::SGuint preload) { handle = c::sgFontCreate(fname, height, preload); }
-                Font(c::SGFont* hdl): handle(hdl) {};
 
             public:
                 Font(const char* fname, float height, c::SGuint preload = 256) { create(fname, height, preload); }
                 ~Font() { c::sgFontDestroy(handle); };
 
-                Font* resizeCopy(float height) { return new Font(c::sgFontResizeCopy(handle, height)); }
+                /*Font* resizeCopy(float height) { return new Font(c::sgFontResizeCopy(handle, height)); }
                 Font* resize(float height)
                 {
                     c::SGFont* newh = c::sgFontResize(handle, height);
                     if(newh == handle)
                         return this;
                     return new Font(newh);
-                }
+                }*/
 
                 void printfW(float x, float y, const wchar_t* format, ...)
                 {
@@ -200,6 +198,7 @@ namespace siege
                 void getPos(float* x, float* y, std::size_t index, const char* text) { c::sgFontGetPos(handle, x, y, index, text); }
                 void getPos(float& x, float& y, std::size_t index, const char* text) { c::sgFontGetPos(handle, &x, &y, index, text); }
         } ;
+        RTYPE(Font);
     }
 }
 

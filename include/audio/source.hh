@@ -90,6 +90,7 @@ namespace siege
             void setLooping(bool looping) { c::sgAudioSourceSetLooping(handle, looping); }
             bool getLooping() { return c::sgAudioSourceGetLooping(handle); }
         } ;
+        RTYPE(Source);
     }
 }
 

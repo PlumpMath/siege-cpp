@@ -21,10 +21,9 @@ namespace siege
 {
     namespace graphics
     {
-        class Turtle
+        class Turtle: public SGClass<c::SGTurtle>
         {
         private:
-            c::SGTurtle* handle;
             void create(float x, float y, float angle, bool draw) { handle = c::sgTurtleCreateDegs(x, y, angle, draw); }
 
         public:
@@ -65,6 +64,7 @@ namespace siege
             void setAngleDegs(float degs) { c::sgTurtleSetAngleDegs(handle, degs); }
             float getAngleDegs() { return c::sgTurtleGetAngleDegs(handle); }
         } ;
+        RTYPE(Turtle);
     }
 }
 

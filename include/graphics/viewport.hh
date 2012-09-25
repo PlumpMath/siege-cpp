@@ -21,10 +21,9 @@ namespace siege
 {
     namespace graphics
     {
-        class Viewport
+        class Viewport: public SGClass<c::SGViewport>
         {
         private:
-            c::SGViewport* handle;
             void create(c::SGuint wposx, c::SGuint wposy, c::SGuint wsizex, c::SGuint wsizey, float posx, float posy, float sizex, float sizey) { handle = c::sgViewportCreate4i4f(wposx, wposy, wsizex, wsizey, posx, posy, sizex, sizey); }
             void create(c::SGuint wposx, c::SGuint wposy, c::SGuint wsizex, c::SGuint wsizey) { handle = c::sgViewportCreate4i(wposx, wposy, wsizex, wsizey); }
             void create() { handle = c::sgViewportCreate(); }
@@ -39,6 +38,7 @@ namespace siege
             void set(c::SGuint wposx, c::SGuint wposy, c::SGuint wsizex, c::SGuint wsizey) { c::sgViewportSet4i(handle, wposx, wposy, wsizex, wsizey); }
             void reset() { c::sgViewportReset(handle); }
         } ;
+        RTYPE(Viewport);
     }
 }
 
