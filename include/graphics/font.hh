@@ -24,10 +24,10 @@ namespace siege
         class Font: public SGClass<c::SGFont>
         {
             private:
-                void create(const char* fname, float height, c::SGuint preload) { handle = c::sgFontCreate(fname, height, preload); }
+                void create(const char* fname, float height, c::SGuint bpp, c::SGuint preload) { handle = c::sgFontCreate(fname, height, bpp, preload); }
 
             public:
-                Font(const char* fname, float height, c::SGuint preload = 256) { create(fname, height, preload); }
+                Font(const char* fname, float height, c::SGuint bpp = 0, c::SGuint preload = 127) { create(fname, height, bpp, preload); }
                 ~Font() { c::sgFontDestroy(handle); };
 
                 /*Font* resizeCopy(float height) { return new Font(c::sgFontResizeCopy(handle, height)); }

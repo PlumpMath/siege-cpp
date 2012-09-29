@@ -41,6 +41,7 @@ int main()
     PSprite sprBox = new Sprite("data/sprites/CrateSmall.png");
 
     PBox box = new Box(sprBox, 320, 240);
+    (void)box;
 
     for(;;)
     {
