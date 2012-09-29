@@ -30,14 +30,7 @@ namespace siege
                 Font(const char* fname, float height, c::SGuint bpp = 0, c::SGuint preload = 127) { create(fname, height, bpp, preload); }
                 ~Font() { c::sgFontDestroy(handle); };
 
-                /*Font* resizeCopy(float height) { return new Font(c::sgFontResizeCopy(handle, height)); }
-                Font* resize(float height)
-                {
-                    c::SGFont* newh = c::sgFontResize(handle, height);
-                    if(newh == handle)
-                        return this;
-                    return new Font(newh);
-                }*/
+                void setHeight(float height, c::SGuint bpp = 0) { c::sgFontSetHeight(handle, height, bpp); }
 
                 void printfW(float x, float y, const wchar_t* format, ...)
                 {
