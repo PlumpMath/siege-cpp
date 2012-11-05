@@ -28,62 +28,62 @@ namespace siege
         class Entity: public SGClass<c::SGEntity>
         {
         private:
-            static c::SGbool c_cbInside(c::SGEntity* entity, float x, float y) { return ENT(entity)->cbInside(x, y); }
+            static c::SGbool SG_CALL c_cbInside(c::SGEntity* entity, float x, float y) { return ENT(entity)->cbInside(x, y); }
 
-            static void c_lcDestroy(c::SGEntity* entity) { ENT(entity)->lcDestroy(); }
+            static void SG_CALL c_lcDestroy(c::SGEntity* entity) { ENT(entity)->lcDestroy(); }
 
-            static void c_evInit(c::SGEntity* entity) { ENT(entity)->evInit(); }
-            static void c_evDeinit(c::SGEntity* entity) { ENT(entity)->evDeinit(); }
+            static void SG_CALL c_evInit(c::SGEntity* entity) { ENT(entity)->evInit(); }
+            static void SG_CALL c_evDeinit(c::SGEntity* entity) { ENT(entity)->evDeinit(); }
 
-            static void c_evStart(c::SGEntity* entity) { ENT(entity)->evStart(); }
-            static void c_evExit(c::SGEntity* entity) { ENT(entity)->evExit(); }
+            static void SG_CALL c_evStart(c::SGEntity* entity) { ENT(entity)->evStart(); }
+            static void SG_CALL c_evExit(c::SGEntity* entity) { ENT(entity)->evExit(); }
 
-            static void c_evTick(c::SGEntity* entity) { ENT(entity)->evTick(); }
-            static void c_evTickBegin(c::SGEntity* entity) { ENT(entity)->evTickBegin(); }
-            static void c_evTickEnd(c::SGEntity* entity) { ENT(entity)->evTickEnd(); }
-            static void c_evDraw(c::SGEntity* entity) { ENT(entity)->evDraw(); }
+            static void SG_CALL c_evTick(c::SGEntity* entity) { ENT(entity)->evTick(); }
+            static void SG_CALL c_evTickBegin(c::SGEntity* entity) { ENT(entity)->evTickBegin(); }
+            static void SG_CALL c_evTickEnd(c::SGEntity* entity) { ENT(entity)->evTickEnd(); }
+            static void SG_CALL c_evDraw(c::SGEntity* entity) { ENT(entity)->evDraw(); }
 
-            static void c_evWindowOpen(c::SGEntity* entity) { ENT(entity)->evWindowOpen(); }
-            static void c_evWindowClose(c::SGEntity* entity) { ENT(entity)->evWindowClose(); }
-            static void c_evWindowResize(c::SGEntity* entity, c::SGuint width, c::SGuint height) { ENT(entity)->evWindowResize(width, height); }
+            static void SG_CALL c_evWindowOpen(c::SGEntity* entity) { ENT(entity)->evWindowOpen(); }
+            static void SG_CALL c_evWindowClose(c::SGEntity* entity) { ENT(entity)->evWindowClose(); }
+            static void SG_CALL c_evWindowResize(c::SGEntity* entity, c::SGuint width, c::SGuint height) { ENT(entity)->evWindowResize(width, height); }
 
-            static void c_evMouseButton(c::SGEntity* entity, c::SGuint button) { ENT(entity)->evMouseButton(button); }
-            static void c_evMouseButtonPress(c::SGEntity* entity, c::SGuint button) { ENT(entity)->evMouseButtonPress(button); }
-            static void c_evMouseButtonRelease(c::SGEntity* entity, c::SGuint button) { ENT(entity)->evMouseButtonRelease(button); }
+            static void SG_CALL c_evMouseButton(c::SGEntity* entity, c::SGuint button) { ENT(entity)->evMouseButton(button); }
+            static void SG_CALL c_evMouseButtonPress(c::SGEntity* entity, c::SGuint button) { ENT(entity)->evMouseButtonPress(button); }
+            static void SG_CALL c_evMouseButtonRelease(c::SGEntity* entity, c::SGuint button) { ENT(entity)->evMouseButtonRelease(button); }
 
-            static void c_evMouseButtonLeft(c::SGEntity* entity) { ENT(entity)->evMouseButtonLeft(); }
-            static void c_evMouseButtonLeftPress(c::SGEntity* entity) { ENT(entity)->evMouseButtonLeftPress(); }
-            static void c_evMouseButtonLeftRelease(c::SGEntity* entity) { ENT(entity)->evMouseButtonLeftRelease(); }
+            static void SG_CALL c_evMouseButtonLeft(c::SGEntity* entity) { ENT(entity)->evMouseButtonLeft(); }
+            static void SG_CALL c_evMouseButtonLeftPress(c::SGEntity* entity) { ENT(entity)->evMouseButtonLeftPress(); }
+            static void SG_CALL c_evMouseButtonLeftRelease(c::SGEntity* entity) { ENT(entity)->evMouseButtonLeftRelease(); }
 
-            static void c_evMouseButtonRight(c::SGEntity* entity) { ENT(entity)->evMouseButtonRight(); }
-            static void c_evMouseButtonRightPress(c::SGEntity* entity) { ENT(entity)->evMouseButtonRightPress(); }
-            static void c_evMouseButtonRightRelease(c::SGEntity* entity) { ENT(entity)->evMouseButtonRightRelease(); }
+            static void SG_CALL c_evMouseButtonRight(c::SGEntity* entity) { ENT(entity)->evMouseButtonRight(); }
+            static void SG_CALL c_evMouseButtonRightPress(c::SGEntity* entity) { ENT(entity)->evMouseButtonRightPress(); }
+            static void SG_CALL c_evMouseButtonRightRelease(c::SGEntity* entity) { ENT(entity)->evMouseButtonRightRelease(); }
 
-            static void c_evMouseButtonMiddle(c::SGEntity* entity) { ENT(entity)->evMouseButtonMiddle(); }
-            static void c_evMouseButtonMiddlePress(c::SGEntity* entity) { ENT(entity)->evMouseButtonMiddlePress(); }
-            static void c_evMouseButtonMiddleRelease(c::SGEntity* entity) { ENT(entity)->evMouseButtonMiddleRelease(); }
+            static void SG_CALL c_evMouseButtonMiddle(c::SGEntity* entity) { ENT(entity)->evMouseButtonMiddle(); }
+            static void SG_CALL c_evMouseButtonMiddlePress(c::SGEntity* entity) { ENT(entity)->evMouseButtonMiddlePress(); }
+            static void SG_CALL c_evMouseButtonMiddleRelease(c::SGEntity* entity) { ENT(entity)->evMouseButtonMiddleRelease(); }
 
-            static void c_evMouseMove(c::SGEntity* entity, c::SGint x, c::SGint y) { ENT(entity)->evMouseMove(x, y); }
-            static void c_evMouseWheel(c::SGEntity* entity, c::SGint wheel) { ENT(entity)->evMouseWheel(wheel); }
+            static void SG_CALL c_evMouseMove(c::SGEntity* entity, c::SGint x, c::SGint y) { ENT(entity)->evMouseMove(x, y); }
+            static void SG_CALL c_evMouseWheel(c::SGEntity* entity, c::SGint wheel) { ENT(entity)->evMouseWheel(wheel); }
 
-            static void c_evKeyboardKey(c::SGEntity* entity, c::SGuint key) { ENT(entity)->evKeyboardKey(key); }
-            static void c_evKeyboardKeyPress(c::SGEntity* entity, c::SGuint key) { ENT(entity)->evKeyboardKeyPress(key); }
-            static void c_evKeyboardKeyRelease(c::SGEntity* entity, c::SGuint key) { ENT(entity)->evKeyboardKeyRelease(key); }
-            static void c_evKeyboardKeyRepeat(c::SGEntity* entity, c::SGuint key) { ENT(entity)->evKeyboardKeyRepeat(key); }
+            static void SG_CALL c_evKeyboardKey(c::SGEntity* entity, c::SGuint key) { ENT(entity)->evKeyboardKey(key); }
+            static void SG_CALL c_evKeyboardKeyPress(c::SGEntity* entity, c::SGuint key) { ENT(entity)->evKeyboardKeyPress(key); }
+            static void SG_CALL c_evKeyboardKeyRelease(c::SGEntity* entity, c::SGuint key) { ENT(entity)->evKeyboardKeyRelease(key); }
+            static void SG_CALL c_evKeyboardKeyRepeat(c::SGEntity* entity, c::SGuint key) { ENT(entity)->evKeyboardKeyRepeat(key); }
 
-            static void c_evKeyboardCharPress(c::SGEntity* entity, c::SGdchar chr) { ENT(entity)->evKeyboardCharPress(chr); }
+            static void SG_CALL c_evKeyboardCharPress(c::SGEntity* entity, c::SGdchar chr) { ENT(entity)->evKeyboardCharPress(chr); }
 
-            static void c_evJoystickButton(c::SGEntity* entity, c::SGuint joy, c::SGuint button) { ENT(entity)->evJoystickButton(joy, button); }
-            static void c_evJoystickButtonPress(c::SGEntity* entity, c::SGuint joy, c::SGuint button) { ENT(entity)->evJoystickButtonPress(joy, button); }
-            static void c_evJoystickButtonRelease(c::SGEntity* entity, c::SGuint joy, c::SGuint button) { ENT(entity)->evJoystickButtonRelease(joy, button); }
-            static void c_evJoystickMove(c::SGEntity* entity, c::SGuint joy, float* axis, size_t numaxis) { ENT(entity)->evJoystickMove(joy, axis, numaxis); }
+            static void SG_CALL c_evJoystickButton(c::SGEntity* entity, c::SGuint joy, c::SGuint button) { ENT(entity)->evJoystickButton(joy, button); }
+            static void SG_CALL c_evJoystickButtonPress(c::SGEntity* entity, c::SGuint joy, c::SGuint button) { ENT(entity)->evJoystickButtonPress(joy, button); }
+            static void SG_CALL c_evJoystickButtonRelease(c::SGEntity* entity, c::SGuint joy, c::SGuint button) { ENT(entity)->evJoystickButtonRelease(joy, button); }
+            static void SG_CALL c_evJoystickMove(c::SGEntity* entity, c::SGuint joy, float* axis, size_t numaxis) { ENT(entity)->evJoystickMove(joy, axis, numaxis); }
 
             // networking goes here
 
-            static void c_evLevelStart(c::SGEntity* entity) { ENT(entity)->evLevelStart(); }
-            static void c_evLevelEnd(c::SGEntity* entity) { ENT(entity)->evLevelEnd(); }
+            static void SG_CALL c_evLevelStart(c::SGEntity* entity) { ENT(entity)->evLevelStart(); }
+            static void SG_CALL c_evLevelEnd(c::SGEntity* entity) { ENT(entity)->evLevelEnd(); }
 
-            static void c_evUser(c::SGEntity* entity, c::SGuint id, va_list args) { ENT(entity)->evUser(id, args); }
+            static void SG_CALL c_evUser(c::SGEntity* entity, c::SGuint id, va_list args) { ENT(entity)->evUser(id, args); }
 
             graphics::PSprite sprite;
             void create()
