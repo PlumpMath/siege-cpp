@@ -1,6 +1,6 @@
 #include <cstdio>
 
-#include <siege.hh>
+#include <siege-cpp>
 
 #include <cmath>
 
