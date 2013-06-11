@@ -30,27 +30,27 @@
 
 namespace siege
 {
-	namespace type
-	{
-		using c::SGbool;
-		using c::SGenum;
+    namespace type
+    {
+        using c::SGbool;
+        using c::SGenum;
 
-		using c::SGchar;
-		using c::SGwchar;
-		using c::SGdchar;
+        using c::SGchar;
+        using c::SGwchar;
+        using c::SGdchar;
 
-		using c::SGbyte;
-		using c::SGubyte;
-		using c::SGshort;
-		using c::SGushort;
-		using c::SGint;
-		using c::SGuint;
-		using c::SGlong;
-		using c::SGulong;
+        using c::SGbyte;
+        using c::SGubyte;
+        using c::SGshort;
+        using c::SGushort;
+        using c::SGint;
+        using c::SGuint;
+        using c::SGlong;
+        using c::SGulong;
 
-		using c::SGfloat;
-		using c::SGdouble;
-	}
+        using c::SGfloat;
+        using c::SGdouble;
+    }
 }
 
 #endif // __CPP_SIEGE_H__
