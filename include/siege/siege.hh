@@ -23,10 +23,22 @@
 #include "core/window.hh"
 #include "graphics/draw.hh"
 #include "graphics/font.hh"
+#include "graphics/image.hh"
 #include "graphics/sprite.hh"
+#include "graphics/surface.hh"
+#include "graphics/texture.hh"
+#include "graphics/trail.hh"
 #include "graphics/turtle.hh"
 #include "graphics/viewport.hh"
 #include "input/keyboard.hh"
+#include "input/mouse.hh"
+#include "physics/module.hh"
+#include "physics/body.hh"
+#include "physics/collision.hh"
+#include "physics/constraint.hh"
+#include "physics/shape.hh"
+#include "physics/space.hh"
+#include "util/vector.hh"
 
 namespace siege
 {

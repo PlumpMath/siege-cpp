@@ -75,6 +75,7 @@ namespace siege
     {
     protected:
         T* handle;
+        explicit SGClass(T* chandle): handle(chandle) {}
     public:
         SGClass(): handle(NULL) {}
         virtual ~SGClass() {}

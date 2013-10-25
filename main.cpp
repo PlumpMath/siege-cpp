@@ -1,5 +1,6 @@
 #include <cstdio>
 
+#define CPPSG_REFCOUNT
 #include <siege-cpp>
 
 #include <cmath>

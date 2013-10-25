@@ -28,6 +28,9 @@ namespace siege
         inline void getVersion(c::SGushort& vmajor, c::SGushort& vminor, c::SGushort& vpatch) { c::sgGetVersion(&vmajor, &vminor, &vpatch); }
         inline char* getVersionString() { return c::sgGetVersionString(); }
 
+        inline char* getCompileDate() { return c::sgGetCompileDate(); }
+        inline char* getCompileTime() { return c::sgGetCompileTime(); }
+
         inline c::SGbool init(c::SGenum flags = 0) { return c::sgInit(flags); }
         inline c::SGbool deinit() { return c::sgDeinit(); }
 

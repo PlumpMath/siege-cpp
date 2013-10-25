@@ -16,6 +16,7 @@
 #define __CPP_SIEGE_GRAPHICS_SPRITE_H__
 
 #include "../common.hh"
+#include "texture.hh"
 
 namespace siege
 {
@@ -23,16 +24,16 @@ namespace siege
     {
         class Sprite: public SGClass<c::SGSprite>
         {
+            PTexture texture;
         private:
-            //void create(Texture* tex, float xoffset, float yoffset) {}
-            //void create(Texture* tex) {}
+            void create(PTexture tex, float xoffset, float yoffset) { texture = tex; handle = c::sgSpriteCreateTexture2f(tex->getHandle(), xoffset, yoffset); }
+            void create(PTexture tex) { texture = tex; handle = c::sgSpriteCreateTexture(tex->getHandle()); }
             void create(const char* fname, float xoffset, float yoffset) { handle = c::sgSpriteCreateFile2f(fname, xoffset, yoffset); }
             void create(const char* fname) { handle = c::sgSpriteCreateFile(fname); }
 
         public:
-            /// \todo overload
-            //Sprite(Texture* tex, float xoffset, float yoffset)
-            //Sprite(Texture* tex)
+            Sprite(PTexture tex, float xoffset, float yoffset) { create(tex, xoffset, yoffset); }
+            Sprite(PTexture tex) { create(tex); }
             Sprite(const char* fname, float xoffset, float yoffset) { create(fname, xoffset, yoffset); }
             Sprite(const char* fname) { create(fname); }
             ~Sprite() { if(handle) c::sgSpriteDestroy(handle); }

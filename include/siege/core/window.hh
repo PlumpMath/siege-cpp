@@ -27,6 +27,8 @@ namespace siege
             inline bool isOpened() { return c::sgWindowIsOpened(); }
             inline void close() { c::sgWindowClose(); }
 
+            // inline void setIcon(PImageData idata)
+
             inline void setTitlef(const char* format, ...)
             {
                 std::va_list args;
@@ -47,7 +49,12 @@ namespace siege
             inline void setHeight(c::SGuint height) { c::sgWindowSetHeight(height); }
             inline c::SGuint getHeight() { return c::sgWindowGetHeight(); }
 
-            inline void swapBuffers() { c::sgWindowSwapBuffers();}
+            inline c::SGfloat getFPSLimit() { return c::sgWindowGetFPSLimit(); };
+            inline void setFPSLimit(c::SGfloat limit) { c::sgWindowSetFPSLimit(limit); }
+            inline c::SGfloat getFPS() { return c::sgWindowGetFPS(); }
+
+            inline void handleEvents() { c::sgWindowHandleEvents(); }
+            inline void swapBuffers() { c::sgWindowSwapBuffers(); }
         }
     }
 }
