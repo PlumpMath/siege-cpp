@@ -31,10 +31,6 @@ RTYPE(Box);
 
 int main()
 {
-    core::loadModule("SDL");
-    core::loadModule("OpenGL");
-    core::loadModule("DevIL");
-
     core::init(0);
     window::open(640, 480, 32, 0);
 

@@ -17,6 +17,8 @@
 
 #include "../common.hh"
 
+#include <cstdio>
+
 namespace siege
 {
     namespace core
@@ -26,17 +28,7 @@ namespace siege
         inline void getVersion(c::SGushort& vmajor, c::SGushort& vminor, c::SGushort& vpatch) { c::sgGetVersion(&vmajor, &vminor, &vpatch); }
         inline char* getVersionString() { return c::sgGetVersionString(); }
 
-        inline c::SGuint loadModulesv(std::size_t n, std::va_list args) { return c::sgLoadModulesv(n, args); }
-        inline c::SGuint loadModules(std::size_t n, ...)
-        {
-            std::va_list args;
-            va_start(args, n);
-            c::SGuint ret = c::sgLoadModulesv(n, args);
-            va_end(args);
-            return ret;
-        }
-        inline c::SGbool loadModule(const char* module) { return c::sgLoadModule(module); }
-        inline c::SGbool init(c::SGenum flags) { return c::sgInit(flags); }
+        inline c::SGbool init(c::SGenum flags = 0) { return c::sgInit(flags); }
         inline c::SGbool deinit() { return c::sgDeinit(); }
 
         inline c::SGint run() { return c::sgRun(); }

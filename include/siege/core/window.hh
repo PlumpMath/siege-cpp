@@ -23,7 +23,7 @@ namespace siege
     {
         namespace window
         {
-            inline bool open(c::SGuint width, c::SGuint height, c::SGuint bpp, c::SGenum flags) { return c::sgWindowOpen(width, height, bpp, flags); }
+            inline bool open(c::SGuint width, c::SGuint height, c::SGuint bpp, c::SGenum flags = 0) { return c::sgWindowOpen(width, height, bpp, flags); }
             inline bool isOpened() { return c::sgWindowIsOpened(); }
             inline void close() { c::sgWindowClose(); }
 
